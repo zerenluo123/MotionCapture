@@ -2,16 +2,16 @@ import pandas as pd
 import numpy as np
 
 # determine the mocap and txt name according to dict (dog_clips_info.txt)
-mocap_name = 'D1_053_KAN01_001' + '_worldpos'
-txt_name = 'dog_walk09' + '_joint_pos'
+mocap_name = 'walk' + '_worldpos'
+txt_name = 'walk' + '_joint_pos'
 
 # read mocap data from csv
 pos_df = pd.read_csv(mocap_name + '.csv')
 pos_csv = np.array(pos_df)
-pos_csv = pos_csv[:, 1:] # remove time column
+#pos_csv = pos_csv[:, 1:] # remove time column
 
 # [cm] to [m]
-pos_csv = pos_csv * 0.01
+#pos_csv = pos_csv * 0.01
 
 # minus pos init offset
 pos_csv_init = pos_csv[0, 0:3].copy()
@@ -48,23 +48,22 @@ np.savetxt('gen_txt/' + txt_name + '_from_csv.txt', pos_csv_swap, fmt=['%-9.5f']
 ###########################################
 ##############   Debugging   ##############
 ###########################################
-# ! only for debugging: see if our methods - example = 0
-# our methods
-csv_pos = np.loadtxt('gen_txt/' + txt_name + '_from_csv.txt', delimiter=",")
+## ! only for debugging: see if our methods - example = 0
+## our methods
+#csv_pos = np.loadtxt('gen_txt/' + txt_name + '_from_csv.txt', delimiter=",")
 
-# example
-txt_pos = np.loadtxt('gen_txt/' + txt_name + '.txt', delimiter=",")
+## example
+#txt_pos = np.loadtxt('gen_txt/' + txt_name + '.txt', delimiter=",")
 
-# our method - example
-diff = csv_pos - txt_pos
+## our method - example
+#diff = csv_pos - txt_pos
 
-# check nonzero col and row
-row, col = np.nonzero(diff)
-# print(row, col)
-print("Nonzero value in the diff: ", diff[row, col])
+## check nonzero col and row
+#row, col = np.nonzero(diff)
+## print(row, col)
+#print("Nonzero value in the diff: ", diff[row, col])
 
-# widen the condition
-idx_e_5 = np.where(diff > 0.0001)
-print("Number of frame with the error larger than 10 ^ (-4): ", idx_e_5)
-
+## widen the condition
+#idx_e_5 = np.where(diff > 0.0001)
+#print("Number of frame with the error larger than 10 ^ (-4): ", idx_e_5)
 
