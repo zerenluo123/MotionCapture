@@ -7,11 +7,11 @@ mocap_idx       mocap_name          corres_retarget_idx  corres_track_idx       
 5               RightLeg            21                         1                   |       5                   HeadEnd               |      5         LeftFoot            10                                 
 6               RightFoot           22                         2                   |       6                   LeftShoulder          |      6         Spine               12    
 7               RightFootEnd        23                         2                   |       7                   LeftArm               |      7         Spine1              13
-8               LeftUpLeg           16                         3                   |       8                   LeftForeArm           |      8         RightShoulder       14
-9               LeftLeg             17                         4                   |       9                   LeftHand              |      9         RightArm            15
+8               LeftUpLeg           16                         3                   |       8                   LeftForeArm           |      8         RightArm            14
+9               LeftLeg             17                         4                   |       9                   LeftHand              |      9         RightForeArm        15
 10              LeftFoot            18                         5                   |       10                  LeftHandEnd           |      10        RightHand           17
-11              LeftFootEnd         19                         5                   |       11                  RightShoulder         |      11        LeftShoulder        19
-12              Spine               1                          6                   |       12                  RightArm              |      12        LeftArm             20
+11              LeftFootEnd         19                         5                   |       11                  RightShoulder         |      11        LeftArm             19
+12              Spine               1                          6                   |       12                  RightArm              |      12        LeftForeArm         20
 13              Spine1              2                          7                   |       13                  RightForeArm          |      13        LeftHand            22
 14              RightShoulder       11                         8                   |       14                  RightHand             |      14        Neck                24
 15              RightArm            12                         8                   |       15                  RightHandEnd          |      15        Head                25
